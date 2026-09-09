@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>調整期間で最も良く見えたゴールドが88%劣化した記録</title>
+  <meta name="description" content="2020〜2026年で調整した条件を未使用の2013〜2019年へ適用し、ゴールドが88%、ドル円が46%劣化したアウトオブサンプル検証。">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/out-of-sample.html">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/out-of-sample.html">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/#out-of-sample">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "調整期間で最も良く見えたゴールドが88%劣化した記録",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/out-of-sample.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "概要", "item": "https://naporit0742.github.io/nfp-event-study/"},
+          {"@type": "ListItem", "position": 2, "name": "未使用期間の検証", "item": "https://naporit0742.github.io/nfp-event-study/out-of-sample.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="out-of-sample.html" aria-current="page">未使用期間の検証</a>
+        <a href="method.html">方法</a>
+        <a href="facts.html">事実</a>
+        <a href="limits.html">限界</a>
+        <a href="en/index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>最も良く見えたゴールドが、未使用期間で88%劣化した</h1>
+      <p class="definition">本稿は、2020〜2026年で調整した条件を変えずに未使用の2013〜2019年（83回）へ適用し、当初の結果が再現しなかった過程を記録するアウトオブサンプル検証です。</p>
+
+      <p class="finding">調整期間で最も高い平均値だったゴールドが、未使用期間では +1.135R から +0.139R へ88%低下しました。見栄えの強さが頑健性を示すのではなく、選択の影響を大きく受けていた可能性を示す結果でした。</p>
+
+      <h2>条件を固定して、未使用期間へ移した</h2>
+      <p>2020〜2026年のデータで決めた条件は、2013〜2019年へ移す際に変更していません。未使用期間は雇用統計83回で、欠測や条件未成立のため実際の評価件数は対象ごとに異なります。同じ期間で条件選択と評価を繰り返さないことが、この比較の中心です。</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>平均値、t値、評価件数の期間比較。Rは各観測の想定リスクで標準化した単位。</caption>
+          <thead>
+            <tr><th>対象</th><th>2020〜2026年（調整）</th><th>2013〜2019年（未使用）</th><th>平均値の低下</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ゴールド</td><td>+1.135R / t=3.55 / n=51</td><td>+0.139R / t=0.63 / n=70</td><td class="negative">88%減</td></tr>
+            <tr><td>ドル円</td><td>+0.537R / t=2.35 / n=55</td><td>+0.290R / t=1.74 / n=64</td><td class="negative">46%減</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>未使用期間の95%信頼区間は、ゴールドが [-0.301, +0.579]R、ドル円が [-0.043, +0.623]R で、どちらも0をまたぎました。今回の標本だけから平均値の符号を確定できる結果ではありません。</p>
+
+      <figure class="figure">
+        <img src="assets/oos-comparison.png" width="1631" height="954" alt="ゴールドとドル円の調整期間と未使用期間の平均Rを信頼区間つきで比較した棒グラフ。調整期間で最も高かったゴールドが未使用期間で88%低下している。">
+        <figcaption>調整期間と未使用期間の平均値。エラーバーは平均値とt値から求めた95%信頼区間です。</figcaption>
+      </figure>
+
+      <h2>なぜ劣化したのか</h2>
+      <p>二つの期間では、雇用者数の実績と市場予想の差であるサプライズ絶対値の規模が約2倍異なりました。また、初動が事前の発動幅をどれだけ上回ったかを示す比率も調整期間の方が大きい値でした。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>期間別のサプライズ絶対値と、初動÷発動幅の中央値</caption>
+          <thead><tr><th>対象</th><th>期間</th><th>サプライズ絶対値</th><th>初動 ÷ 発動幅</th></tr></thead>
+          <tbody>
+            <tr><td>ドル円</td><td>2013〜2019年</td><td>35千人</td><td>1.16</td></tr>
+            <tr><td>ドル円</td><td>2020〜2026年</td><td>64千人</td><td>1.48</td></tr>
+            <tr><td>ゴールド</td><td>2013〜2019年</td><td>34千人</td><td>1.60</td></tr>
+            <tr><td>ゴールド</td><td>2020〜2026年</td><td>62千人</td><td>2.25</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>比率が1.16なら、初動が発動幅を上回る部分は0.16倍です。今回のデータでは、この差が小さい期間ほど、仮定したコストの影響が相対的に大きくなりました。二期間の市場環境が同じ分布から来たとみなす前提は、弱いものでした。</p>
+
+      <figure class="figure">
+        <img src="assets/surprise-distribution.png" width="1819" height="888" alt="2013〜2019年と2020〜2026年について、雇用者数サプライズ絶対値を5階級に分けた分布比較。調整期間では200千人以上の階級が増え、中央値は35千人から64千人になっている。">
+        <figcaption>個別の市場予想値は掲載せず、各期間内の階級別割合だけを表示しています。</figcaption>
+      </figure>
+
+      <h2>環境で条件づけても再現しなかった</h2>
+      <p>期間差を見た後、「直前12回のサプライズが大きい局面だけを残す」という、観測時点で判定できる絞り込みも確認しました。ゴールドの該当局面は全期間では +0.655R でしたが、未使用期間だけでは18回で −0.040R でした。</p>
+      <p>全期間の値には調整期間が混ざります。全期間で改善したように見えても、未使用期間だけで同じ変化が確認できなければ、環境条件による説明を裏づけることにはなりません。</p>
+
+      <h2>この負の結果から得られる教訓</h2>
+      <ol class="compact-list">
+        <li><strong>見栄えと再現性は別です。</strong> 調整期間の平均値やt値が高いだけでは、未使用期間へ移したときの安定性は分かりません。</li>
+        <li><strong>試した選択肢の数を記録します。</strong> 今回は40通り以上から条件を選びました。最良値には選択による上振れが含まれ得ます。</li>
+        <li><strong>環境説明も未使用期間で確かめます。</strong> 後から見つけた条件は、全期間ではなく、条件選択に使っていない部分で判定します。</li>
+        <li><strong>負の結果を残します。</strong> 条件を変えて見栄えを戻すより、固定条件が崩れた事実を記録する方が、次の検証の基準になります。</li>
+      </ol>
+
+      <p class="source-note">ここに掲載したのは集計統計だけです。価格はHistData.com、市場予想は個人ブログおよびみんかぶFX、実績値はBLS Employment Situationを元にしましたが、個別値と元ファイルは再配布していません。</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>免責:</strong> 本サイトは過去データの統計分析と方法論の解説であり、投資助言ではありません。将来の価格、成果、収益性を予測または保証するものではありません。</p>
+      <p class="footer-meta">© 2026 NaporiT · <a href="method.html">検証手順を読む</a></p>
+    </div>
+  </footer>
+</body>
+</html>

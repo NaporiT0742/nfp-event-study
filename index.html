@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>米雇用統計イベントの実証検証</title>
+  <meta name="description" content="2013〜2026年の米雇用統計159回を対象に、発表前後の値動きとアウトオブサンプル検証の失敗を集計した公開研究。">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/">
+  <link rel="alternate" hreflang="x-default" href="https://naporit0742.github.io/nfp-event-study/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "米雇用統計イベントの実証検証",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "概要", "item": "https://naporit0742.github.io/nfp-event-study/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "発表内容を確認してからでも間に合いますか？", "acceptedAnswer": {"@type": "Answer", "text": "今回のデータでは値動きが発表分に集中し、その後10分の方向性は50〜55%の範囲でした。発表後に方向を確認する考え方を支持する結果ではありませんでした。"}},
+          {"@type": "Question", "name": "なぜ当初案を取り下げたのですか？", "acceptedAnswer": {"@type": "Answer", "text": "2020〜2026年で調整した条件を未使用の2013〜2019年へ固定したまま適用すると、ゴールドの平均値は88%、ドル円は46%低下し、95%信頼区間が0をまたいだからです。"}},
+          {"@type": "Question", "name": "元データは公開していますか？", "acceptedAnswer": {"@type": "Answer", "text": "公開していません。価格と市場予想は再配布許諾を確認できないため、集計値、図表、方法論、図の再生成コードだけを公開しています。"}},
+          {"@type": "Question", "name": "このサイトは投資助言ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。過去データの統計分析と検証方法の記録であり、売買行動や将来の成果を示すものではありません。"}},
+          {"@type": "Question", "name": "なぜ期間を二つに分けたのですか？", "acceptedAnswer": {"@type": "Answer", "text": "同じデータで条件を選び評価すると過剰適合を見抜けないためです。調整に使わない期間を最初から分離し、条件を変えずに再評価しました。"}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="index.html" aria-current="page">概要</a>
+        <a href="out-of-sample.html">未使用期間の検証</a>
+        <a href="method.html">方法</a>
+        <a href="facts.html">事実</a>
+        <a href="limits.html">限界</a>
+        <a href="en/index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>米雇用統計イベントの実証検証</h1>
+      <p class="definition">本サイトは、米雇用統計の発表前後の値動きを2013〜2026年の計159回について調べ、調整期間で良く見えた結果が未使用期間では再現しなかった過程を示す実証記録です。</p>
+
+      <aside class="notice" aria-label="免責">
+        <strong>分析の位置づけ</strong><br>
+        これは過去データの統計分析と方法論の解説です。売買行動、特定の対象や方向、将来の成果を示すものではありません。
+      </aside>
+
+      <p class="eyebrow">Primary finding</p>
+      <h2>最も良く見えた結果ほど、未使用期間で大きく崩れた</h2>
+      <div class="metric-grid">
+        <div class="metric">
+          <strong class="negative">88%減</strong>
+          <p>ゴールドの平均値は、調整期間の +1.135R から未使用期間の +0.139R へ低下しました。</p>
+        </div>
+        <div class="metric">
+          <strong class="negative">46%減</strong>
+          <p>ドル円の平均値は、調整期間の +0.537R から未使用期間の +0.290R へ低下しました。</p>
+        </div>
+      </div>
+      <p class="finding">今回のデータで最も重要だったのは、2020〜2026年の調整期間で最も良く見えたゴールドが、未使用の2013〜2019年で最も大きく劣化したことです。未使用期間では両方の95%信頼区間が0をまたぎました。</p>
+
+      <figure class="figure">
+        <img src="assets/oos-comparison.png" width="1631" height="954" alt="ゴールドとドル円について、2020〜2026年の調整期間と2013〜2019年の未使用期間の平均Rを95%信頼区間つきで比較した棒グラフ。ゴールドは88%、ドル円は46%低下している。">
+        <figcaption>平均値と平均値とt値から求めた95%信頼区間。エラーバーが0をまたぐ結果は、今回の標本だけでは符号を確定できないことを表します。</figcaption>
+      </figure>
+
+      <h2>今回のデータから確認できたこと</h2>
+      <div class="metric-grid">
+        <div class="metric">
+          <strong>発表分に集中</strong>
+          <p>1分値幅の中央値は発表分にドル円34.0 pips、ゴールド9.85ドルとなり、その後は小さくなりました。</p>
+        </div>
+        <div class="metric">
+          <strong>その後は50〜55%</strong>
+          <p>発表分の終値以降を初動と同じ向きで見た10分間の結果は、勝率50〜55%の範囲でした。</p>
+        </div>
+        <div class="metric">
+          <strong>同じ要因に反応</strong>
+          <p>ドル円とゴールドの検証値は相関 +0.50、勝敗がそろった回は51回中40回（78%）でした。</p>
+        </div>
+        <div class="metric">
+          <strong>期間差は約2倍</strong>
+          <p>サプライズ絶対値の中央値は、2013〜2019年の34〜35千人に対し、2020〜2026年は62〜64千人でした。</p>
+        </div>
+      </div>
+
+      <h2>対象とデータの境界</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>調査対象と公開範囲</caption>
+          <thead><tr><th>項目</th><th>範囲</th><th>公開上の扱い</th></tr></thead>
+          <tbody>
+            <tr><td>イベント</td><td>米雇用統計、2013〜2026年、計159回</td><td>期間・件数・集計値のみ掲載</td></tr>
+            <tr><td>対象系列</td><td>2本（ドル円1通貨ペア、ゴールド1系列）</td><td>統計量と多数イベントの集計図のみ掲載</td></tr>
+            <tr><td>実績値</td><td>BLS Employment Situation</td><td>出所を明記し、必要な集計値だけ掲載</td></tr>
+            <tr><td>市場予想</td><td>個人ブログ、みんかぶFX</td><td>再配布せず、個別値や一覧を掲載しない</td></tr>
+            <tr><td>価格</td><td>HistData.com ASCII M1</td><td>再配布せず、個別系列や価格列を掲載しない</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">この公開物に元CSV、ZIP、PDF、個別イベントの分足系列はありません。図は複数イベントをまとめた集計で、個別価格を復元できない形にしています。</p>
+
+      <h2>詳しい記録</h2>
+      <div class="link-grid">
+        <div class="link-card"><h3><a href="out-of-sample.html">未使用期間の検証</a></h3><p>なぜ当初案を取り下げたのか。88%減という負の結果を中心に記録します。</p></div>
+        <div class="link-card"><h3><a href="method.html">検証方法</a></h3><p>期間分割、標本数、信頼区間、感応度、選択肢の数をどう扱うかをまとめます。</p></div>
+        <div class="link-card"><h3><a href="facts.html">確認できた事実</a></h3><p>発表直後への集中、初動方向、対象間の相関、期間差を表と図で示します。</p></div>
+        <div class="link-card"><h3><a href="limits.html">限界と再現</a></h3><p>データ、約定仮定、除外期間、再配布境界、図の再生成方法を説明します。</p></div>
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details><summary>発表内容を確認してからでも間に合いますか？</summary><p>今回のデータでは値動きが発表分に集中し、その後10分の方向性は50〜55%の範囲でした。発表後に方向を確認する考え方を支持する結果ではありませんでした。</p></details>
+        <details><summary>なぜ当初案を取り下げたのですか？</summary><p>2020〜2026年で調整した条件を未使用の2013〜2019年へ固定したまま適用すると、ゴールドの平均値は88%、ドル円は46%低下し、95%信頼区間が0をまたいだからです。</p></details>
+        <details><summary>元データは公開していますか？</summary><p>公開していません。価格と市場予想は再配布許諾を確認できないため、集計値、図表、方法論、図の再生成コードだけを公開しています。</p></details>
+        <details><summary>このサイトは投資助言ですか？</summary><p>いいえ。過去データの統計分析と検証方法の記録であり、売買行動や将来の成果を示すものではありません。</p></details>
+        <details><summary>なぜ期間を二つに分けたのですか？</summary><p>同じデータで条件を選び評価すると過剰適合を見抜けないためです。調整に使わない期間を最初から分離し、条件を変えずに再評価しました。</p></details>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>免責:</strong> 本サイトは過去データの統計分析と方法論の解説であり、投資助言ではありません。将来の価格、成果、収益性を予測または保証するものではありません。</p>
+      <p class="footer-meta">© 2026 NaporiT · Published aggregate results only</p>
+    </div>
+  </footer>
+</body>
+</html>

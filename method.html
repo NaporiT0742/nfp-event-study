@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>イベント検証で自分を騙さないための6手順</title>
+  <meta name="description" content="経済イベント検証の過剰適合を避けるために、期間分割、標本数、信頼区間、コスト感応度、選択肢、事前条件を確認する手順。">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/method.html">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/method.html">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/#method">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "イベント検証で自分を騙さないための6手順",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/method.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "概要", "item": "https://naporit0742.github.io/nfp-event-study/"},
+          {"@type": "ListItem", "position": 2, "name": "検証方法", "item": "https://naporit0742.github.io/nfp-event-study/method.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="out-of-sample.html">未使用期間の検証</a>
+        <a href="method.html" aria-current="page">方法</a>
+        <a href="facts.html">事実</a>
+        <a href="limits.html">限界</a>
+        <a href="en/index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>イベント検証で自分を騙さないための6手順</h1>
+      <p class="definition">本稿は、経済イベントの過去データを調べるとき、条件選択による過剰適合と不確実性の見落としを減らすための手順書です。</p>
+
+      <p class="finding">結論を出す前に、未使用期間を確保し、標本数と信頼区間を示し、コストと選択肢の感応度を確認します。条件を見つけた後に同じ標本へ戻るほど、見栄えは改善しても独立した証拠は減ります。</p>
+
+      <h2>最初に検証設計を固定する</h2>
+      <p>分析を始める前に、対象イベント、対象期間、測る時点、除外条件、コストの扱い、判定基準を記録します。結果を見た後の変更は別の試行として数え、その変更を評価する新しい未使用データを必要とします。</p>
+
+      <div class="step-grid">
+        <section class="step">
+          <span class="number">1</span>
+          <h3>調整用と未使用を最初に分ける</h3>
+          <p>条件を選ぶ期間と、最後に一度だけ評価する期間を先に分離します。今回の調査では2020〜2026年を調整に使い、2013〜2019年を未使用のまま残しました。</p>
+        </section>
+        <section class="step">
+          <span class="number">2</span>
+          <h3>標本数を数える</h3>
+          <p>雇用統計は原則として年12回です。6年集めても、欠測や除外後の実評価は53〜56回でした。百分率だけでなく分母を併記します。</p>
+        </section>
+        <section class="step">
+          <span class="number">3</span>
+          <h3>信頼区間を見る</h3>
+          <p>平均値や勝率の一点だけでなく、標本の揺れを含む区間を見ます。今回の未使用期間では、両対象の95%信頼区間が0をまたぎました。</p>
+        </section>
+        <section class="step">
+          <span class="number">4</span>
+          <h3>コスト仮定を動かす</h3>
+          <p>スプレッドやスリッページを一点に固定せず、複数の仮定で結果がどの程度変わるかを確認します。元データがBidのみなら、その限界も明記します。</p>
+        </section>
+        <section class="step">
+          <span class="number">5</span>
+          <h3>試した選択肢を数える</h3>
+          <p>40通り以上を試して最大値を選べば、その値には選択による上振れが含まれ得ます。採用した一つだけでなく、探索した総数を記録します。</p>
+        </section>
+        <section class="step">
+          <span class="number">6</span>
+          <h3>事前に判定できる条件だけを使う</h3>
+          <p>イベント後にしか分からない情報で標本を絞らず、その時点までに観測できる条件だけを使います。その条件自体も未使用期間で別に評価します。</p>
+        </section>
+      </div>
+
+      <h2>証拠を表にして残す</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>イベント検証の最小記録項目</caption>
+          <thead><tr><th>項目</th><th>記録する内容</th><th>見落としやすい点</th></tr></thead>
+          <tbody>
+            <tr><td>期間</td><td>調整期間、未使用期間、除外期間</td><td>結果を見てから境界を動かさない</td></tr>
+            <tr><td>標本</td><td>予定イベント数、欠測数、実評価数</td><td>勝率だけでなく分母を示す</td></tr>
+            <tr><td>推定</td><td>平均、中央値、勝率、95%信頼区間</td><td>一点推定だけで符号を決めない</td></tr>
+            <tr><td>コスト</td><td>データに含まれるもの、仮定したもの、感応度</td><td>Bidのみの価格でスプレッドを実測したことにしない</td></tr>
+            <tr><td>探索</td><td>調べた条件数、選択基準、選択時点</td><td>最終条件だけを後付けで事前仮説にしない</td></tr>
+            <tr><td>再評価</td><td>条件固定の証拠、未使用期間の結果、変更履歴</td><td>失敗後に条件を変えて同じ期間を再利用しない</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>判定は平均値だけで行わない</h2>
+      <p>今回の調整期間ではゴールドが +1.135R、t=3.55 と最も高く見えました。しかし、未使用期間では +0.139R、t=0.63 となり、平均値は88%低下しました。これは、調整期間の順位が未使用期間の頑健性を保証しない具体例です。</p>
+      <figure class="figure">
+        <img src="assets/oos-comparison.png" width="1631" height="954" alt="調整期間と未使用期間の平均Rおよび95%信頼区間をゴールドとドル円で比較し、期間外評価の必要性を示す棒グラフ。">
+        <figcaption>未使用期間へ移したときの変化を、平均値と区間の両方で比較します。</figcaption>
+      </figure>
+
+      <h2>結果の書き方</h2>
+      <ul class="compact-list">
+        <li>「この標本では」「今回の期間では」と、観測範囲を明示します。</li>
+        <li>欠測、除外、利用できなかった観測を件数とともに記録します。</li>
+        <li>未使用期間で再現しなかった場合は、その事実を条件変更前に保存します。</li>
+        <li>個別データを公開できない場合でも、集計方法、統計量、コード、データ境界は公開できます。</li>
+      </ul>
+
+      <p class="source-note">図の再生成コードは <code>reproduce/generate_figures.py</code> にあります。公開コードが持つのは集計値だけで、個別イベントの価格や市場予想は含みません。</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>免責:</strong> 本サイトは過去データの統計分析と方法論の解説であり、投資助言ではありません。将来の価格、成果、収益性を予測または保証するものではありません。</p>
+      <p class="footer-meta">© 2026 NaporiT · <a href="out-of-sample.html">未使用期間の結果を読む</a></p>
+    </div>
+  </footer>
+</body>
+</html>

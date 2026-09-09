@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+  <title>米雇用統計イベントの実証検証</title>
+  <id>https://naporit0742.github.io/nfp-event-study/</id>
+  <link rel="self" href="https://naporit0742.github.io/nfp-event-study/feed.xml"/>
+  <link rel="alternate" href="https://naporit0742.github.io/nfp-event-study/"/>
+  <updated>2026-09-09T00:00:00+09:00</updated>
+  <author><name>NaporiT</name></author>
+  <entry>
+    <title>米雇用統計イベントの実証検証</title>
+    <id>https://naporit0742.github.io/nfp-event-study/</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>2013〜2026年の159回を対象にした調査の結論と公開データの境界。</summary>
+  </entry>
+  <entry>
+    <title>調整期間で最も良く見えたゴールドが88%劣化した記録</title>
+    <id>https://naporit0742.github.io/nfp-event-study/out-of-sample.html</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/out-of-sample.html"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>固定条件を未使用の2013〜2019年へ適用し、当初結果が再現しなかった過程。</summary>
+  </entry>
+  <entry>
+    <title>イベント検証で自分を騙さないための6手順</title>
+    <id>https://naporit0742.github.io/nfp-event-study/method.html</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/method.html"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>期間分割、標本数、信頼区間、コスト感応度、選択肢、事前条件を確認する手順。</summary>
+  </entry>
+  <entry>
+    <title>米雇用統計の発表前後で確認できた5つの事実</title>
+    <id>https://naporit0742.github.io/nfp-event-study/facts.html</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/facts.html"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>発表直後への値動きの集中、サプライズと初動、対象間の相関、期間差の集計。</summary>
+  </entry>
+  <entry>
+    <title>検証の限界、データ境界、再現方法</title>
+    <id>https://naporit0742.github.io/nfp-event-study/limits.html</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/limits.html"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>標本、約定仮定、除外、出所、非再配布の理由、図の再生成方法。</summary>
+  </entry>
+  <entry>
+    <title>U.S. Employment Report Event Study</title>
+    <id>https://naporit0742.github.io/nfp-event-study/en/</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/en/"/>
+    <updated>2026-09-09T00:00:00+09:00</updated>
+    <summary>English summary of the out-of-sample result, core findings, method, and limitations.</summary>
+  </entry>
+</feed>

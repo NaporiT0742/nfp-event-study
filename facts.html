@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>米雇用統計の発表前後で確認できた5つの事実</title>
+  <meta name="description" content="米雇用統計の発表直後への値動きの集中、発表後の方向性、サプライズと初動、対象間の相関、期間差を集計値で示す。">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/facts.html">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/facts.html">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/#facts">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "米雇用統計の発表前後で確認できた5つの事実",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/facts.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "概要", "item": "https://naporit0742.github.io/nfp-event-study/"},
+          {"@type": "ListItem", "position": 2, "name": "確認できた事実", "item": "https://naporit0742.github.io/nfp-event-study/facts.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="out-of-sample.html">未使用期間の検証</a>
+        <a href="method.html">方法</a>
+        <a href="facts.html" aria-current="page">事実</a>
+        <a href="limits.html">限界</a>
+        <a href="en/index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>発表直後に集中し、その後は方向性が弱まった</h1>
+      <p class="definition">本稿は、米雇用統計の発表前後について、値動きの時間分布、サプライズと初動の関係、対象間の相関、期間差として今回のデータから確認できた事実をまとめたものです。</p>
+
+      <h2>1. 値動きは発表分に集中した</h2>
+      <p>2020〜2026年のコロナ期を除く集計では、1分値幅の中央値は発表分にドル円34.0 pips、ゴールド9.85ドルでした。発表10〜1分前の各1分はドル円2〜4 pips、ゴールド1.0〜1.2ドルで、発表分は直前の8〜10倍でした。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>1分足の高値と安値の差の中央値</caption>
+          <thead><tr><th>時点</th><th>ドル円</th><th>ゴールド</th></tr></thead>
+          <tbody>
+            <tr><td>発表10〜1分前</td><td>2〜4 pips</td><td>1.0〜1.2ドル</td></tr>
+            <tr><td>発表分</td><td>34.0 pips</td><td>9.85ドル</td></tr>
+            <tr><td>+1分</td><td>12.1 pips</td><td>4.18ドル</td></tr>
+            <tr><td>+5分</td><td>9.2 pips</td><td>2.93ドル</td></tr>
+            <tr><td>+10分</td><td>6.7 pips</td><td>2.64ドル</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="figure">
+        <img src="assets/minute-ranges.png" width="1955" height="811" alt="ドル円とゴールドの1分値幅中央値を発表分、1分後、5分後、10分後で示し、発表直後から急速に小さくなる様子を比較した折れ線グラフ。">
+        <figcaption>個別イベントの価格系列ではなく、複数イベントの中央値だけを図示しています。</figcaption>
+      </figure>
+
+      <h2>2. 発表分の後は方向性が弱まった</h2>
+      <p>発表分の終値から初動と同じ向きに10分間を測った結果は、ドル円が中央値 +2.15 pips・勝率55%、ゴールドが中央値 +0.27ドル・勝率52%でした。ドル円で初動と逆向きに測ると中央値 −2.15 pips・勝率45%でした。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>発表分の終値から10分後までを測った集計</caption>
+          <thead><tr><th>測定</th><th>中央値</th><th>勝率</th></tr></thead>
+          <tbody>
+            <tr><td>ドル円・初動と同じ向き</td><td>+2.15 pips</td><td>55%</td></tr>
+            <tr><td>ドル円・初動と逆向き</td><td>−2.15 pips</td><td>45%</td></tr>
+            <tr><td>ゴールド・初動と同じ向き</td><td>+0.27ドル</td><td>52%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>今回の標本では、この段階から方向を判断する考え方を支持するほどの差は確認できませんでした。加えて、元の1分足はBidのみで、発表時のスプレッドを含んでいません。</p>
+
+      <h2>3. サプライズの符号と初動方向には関係があった</h2>
+      <p>雇用者数の実績が市場予想を上回ったか下回ったかという符号と初動方向の一致率は、全サプライズでドル円73%、ゴールド73%でした。絶対値が5万人以上のサプライズでは、それぞれ85%と82%でした。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>サプライズの符号と初動方向の一致率</caption>
+          <thead><tr><th>対象</th><th>全サプライズ</th><th>5万人以上</th></tr></thead>
+          <tbody>
+            <tr><td>ドル円（同方向の関係）</td><td>73%</td><td>85%</td></tr>
+            <tr><td>ゴールド（逆方向の関係）</td><td>73%</td><td>82%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>これは同時点の過去の関係を集計したものです。発表後の方向性が弱まったという前節の結果を置き換えるものではなく、将来の方向を示すものでもありません。</p>
+
+      <h2>4. 二つの対象は独立した分散源ではなかった</h2>
+      <p>同じイベント条件で算出したドル円とゴールドの結果は、相関 +0.50 でした。51回の共通観測のうち、結果の符号がそろった回は40回（78%）です。方向の反応が逆でも、同じ雇用統計サプライズへ反応するため、独立性は低いという結果でした。</p>
+
+      <h2>5. サプライズ規模は期間で異なった</h2>
+      <p>サプライズ絶対値の中央値は、2013〜2019年がドル円35千人・ゴールド34千人、2020〜2026年がドル円64千人・ゴールド62千人でした。この期間差は、固定した条件の結果が未使用期間で劣化した背景の一つです。</p>
+      <figure class="figure">
+        <img src="assets/surprise-distribution.png" width="1819" height="888" alt="2013〜2019年と2020〜2026年の雇用者数サプライズ絶対値を5階級の割合で比較し、後の期間ほど大きな階級が多いことを示す棒グラフ。">
+        <figcaption>市場予想の個別値は公開せず、期間内の階級別割合へ集計しています。</figcaption>
+      </figure>
+      <p>別の集計では、コロナ期を除く67回のサプライズ中央値は +33千人で、上振れ43回、下振れ24回でした。これは対象期間に観測された偏りであり、その後も続くという意味ではありません。</p>
+
+      <p class="source-note">元の出所は、実績値がBLS Employment Situation、価格がHistData.com、市場予想が個人ブログおよびみんかぶFXです。このページには集計値だけを掲載し、価格列、予想値一覧、個別イベント系列は掲載していません。</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>免責:</strong> 本サイトは過去データの統計分析と方法論の解説であり、投資助言ではありません。将来の価格、成果、収益性を予測または保証するものではありません。</p>
+      <p class="footer-meta">© 2026 NaporiT · <a href="limits.html">限界とデータ境界を読む</a></p>
+    </div>
+  </footer>
+</body>
+</html>

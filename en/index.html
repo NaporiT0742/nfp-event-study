@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U.S. Employment Report Event Study</title>
+  <meta name="description" content="An event study of 159 U.S. Employment Situation releases from 2013 to 2026, centered on an out-of-sample result that failed to replicate.">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/en/">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/">
+  <link rel="alternate" hreflang="x-default" href="https://naporit0742.github.io/nfp-event-study/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "U.S. Employment Report Event Study",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/en/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Japanese report", "item": "https://naporit0742.github.io/nfp-event-study/"},
+          {"@type": "ListItem", "position": 2, "name": "English summary", "item": "https://naporit0742.github.io/nfp-event-study/en/"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="../index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html" lang="ja">日本語</a>
+        <a href="#out-of-sample">Out of sample</a>
+        <a href="#method">Method</a>
+        <a href="#facts">Findings</a>
+        <a href="#limits">Limits</a>
+        <a href="index.html" aria-current="page">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>U.S. Employment Report Event Study</h1>
+      <p class="definition">This report examines price behavior around 159 U.S. Employment Situation releases from 2013 through 2026 and documents a result that looked strongest in the tuning period but failed to replicate out of sample.</p>
+
+      <aside class="notice" aria-label="Disclaimer">
+        <strong>Scope</strong><br>
+        This is historical statistical analysis and a methodology note. It is not investment advice and does not direct a trade, name a future direction, or promise a financial outcome.
+      </aside>
+
+      <section id="out-of-sample">
+        <h2>The strongest in-sample result deteriorated the most</h2>
+        <p>Parameters selected on 2020–2026 data were held fixed and applied to the previously unused 2013–2019 period, which contained 83 scheduled releases. The gold result fell from +1.135R to +0.139R, an 88% reduction. USDJPY fell from +0.537R to +0.290R, a 46% reduction.</p>
+        <p class="finding">Gold had the highest mean in the tuning period and the largest deterioration in the unused period. Its unused-period t-statistic was 0.63, and its 95% confidence interval derived from the mean and t-statistic of [-0.301, +0.579]R crossed zero.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Fixed-parameter comparison across the tuning and unused periods</caption>
+            <thead><tr><th>Instrument</th><th>2020–2026 tuning period</th><th>2013–2019 unused period</th><th>Reduction</th></tr></thead>
+            <tbody>
+              <tr><td>Gold</td><td>+1.135R, t=3.55, n=51</td><td>+0.139R, t=0.63, n=70</td><td class="negative">88%</td></tr>
+              <tr><td>USDJPY</td><td>+0.537R, t=2.35, n=55</td><td>+0.290R, t=1.74, n=64</td><td class="negative">46%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="figure">
+          <img src="../assets/oos-comparison.png" width="1631" height="954" alt="Bar chart comparing tuning-period and unused-period mean R with 95 percent confidence intervals for gold and USDJPY; gold declines by 88 percent and USDJPY by 46 percent.">
+          <figcaption>The labels in the chart are Japanese; the orange bars are the tuning period and the blue bars are the unused period. Error bars are 95% confidence intervals derived from the reported means and t-statistics.</figcaption>
+        </figure>
+        <p>The two periods also differed in surprise magnitude. Median absolute payroll surprise was 34–35 thousand in 2013–2019 and 62–64 thousand in 2020–2026. The ratio of initial movement to activation distance ranged from 1.16–1.60 in the earlier period and 1.48–2.25 in the later period.</p>
+        <p>A pre-observable regime filter did not resolve the problem. Gold observations in the high-surprise regime averaged +0.655R across the full sample, but −0.040R across 18 unused-period observations. Mixing the tuning observations back into the evaluation made the filter look stronger than its unused-period record.</p>
+      </section>
+
+      <section id="method">
+        <h2>A compact method for economic-event studies</h2>
+        <ol class="compact-list">
+          <li><strong>Split first.</strong> Separate a tuning period from an untouched evaluation period before examining candidate conditions.</li>
+          <li><strong>Show the denominator.</strong> A monthly release produces only about 53–56 usable observations over six years after exclusions and missing data.</li>
+          <li><strong>Report intervals.</strong> Present confidence intervals alongside means, medians, and win rates.</li>
+          <li><strong>Vary cost assumptions.</strong> Bid-only minute data do not contain the release-time spread, so cost sensitivity must remain explicit.</li>
+          <li><strong>Count the search.</strong> More than 40 candidate combinations were examined in the tuning period. The maximum is therefore partly a selection outcome.</li>
+          <li><strong>Use only ex-ante conditions.</strong> A filter must be observable before the event and must be evaluated on data not used to invent it.</li>
+        </ol>
+      </section>
+
+      <section id="facts">
+        <h2>What the sample showed</h2>
+        <div class="metric-grid">
+          <div class="metric"><strong>34.0 pips</strong><p>Median USDJPY one-minute range during the release minute, versus 2–4 pips in each of the preceding minutes.</p></div>
+          <div class="metric"><strong>$9.85</strong><p>Median gold one-minute range during the release minute, versus $1.0–$1.2 before the release.</p></div>
+          <div class="metric"><strong>50–55%</strong><p>Observed win-rate range when measuring direction after the release minute had ended.</p></div>
+          <div class="metric"><strong>+0.50</strong><p>Correlation between the two instruments' standardized outcomes; signs matched in 40 of 51 common observations.</p></div>
+        </div>
+        <p>Payroll surprise sign agreed with the initial USDJPY direction in 73% of all observations and 85% when the absolute surprise was at least 50 thousand. Gold showed the inverse relationship in 73% and 82%, respectively. These are contemporaneous historical associations, not forecasts.</p>
+      </section>
+
+      <section id="limits">
+        <h2>Data boundary and limitations</h2>
+        <p>Actual release values came from the BLS Employment Situation. Minute prices came from HistData.com. Consensus values came from a personal blog and Minkabu FX. Because redistribution permission for the latter two source types could not be confirmed, this public report contains no raw price rows, event-level minute series, consensus list, CSV, ZIP, or PDF.</p>
+        <p>The published material is limited to derived aggregates, statistics, charts, methodology, and chart-generation code. The minute data were Bid-only, did not include observed spreads, and could not reveal within-minute ordering of highs and lows. COVID-era releases from April through December 2020 were excluded from the main comparison.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>Disclaimer:</strong> This site is historical statistical analysis and a methodology explanation, not investment advice. It does not predict or guarantee future prices, results, or profitability.</p>
+      <p class="footer-meta">© 2026 NaporiT · <a href="../index.html" lang="ja">日本語版</a></p>
+    </div>
+  </footer>
+</body>
+</html>
