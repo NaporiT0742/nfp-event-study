@@ -12,8 +12,9 @@
 - 1分値幅、平均R、t値、評価件数、サプライズ絶対値の階級別度数
   … 非公開の元データに対する集計結果。値は元レポートと一致させてある
 - 信頼区間
-  … 上の平均R・t値・件数から、このスクリプト内で導出している（下の ci_from_t）。
-    ブートストラップではなく、t分布に基づく区間である
+  … 非公開の元分析 validate_oos.py が出力した95%ブートストラップ信頼区間の転記。
+    strategy.py の bootstrap_ci を random.seed(11) で固定して算出したもので、
+    平均値やt値からの近似ではない
 
 「再現」と名乗っていないのは、このスクリプト単体では再現にならないためである。
 元データからの再計算手順は limits.html に記載している。
@@ -34,18 +35,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets"
 
 
-def ci_from_t(mean, t_stat, n, level: float = 0.95):
-    """平均値・t値・件数から両側95%信頼区間を導く。
-
-    t = mean / SE なので SE = mean / t。区間は mean ± t_crit(df=n-1) * SE。
-    ブートストラップではない。標本平均の分布に t 分布を仮定した区間である。
-    """
-    from scipy import stats
-
-    mean = np.asarray(mean, dtype=float)
-    se = np.abs(mean / np.asarray(t_stat, dtype=float))
-    crit = stats.t.ppf(0.5 + level / 2, np.asarray(n, dtype=float) - 1)
-    return np.vstack((mean - crit * se, mean + crit * se))
+# 信頼区間は非公開の元分析 validate_oos.py の出力をそのまま転記している。
+# 算出方法はブートストラップ（strategy.py の bootstrap_ci、random.seed(11) で固定）。
+# 平均値やt値から近似で導いた値ではない。書き換えないこと。
 
 
 def configure_font() -> str:
@@ -119,15 +111,11 @@ def surprise_distribution() -> None:
 
 def oos_comparison() -> None:
     instruments = ["ゴールド", "ドル円"]
-    # 平均R・t値・評価件数は元データに対する集計結果（元レポートと一致）。
-    # 信頼区間はそこから導出する。端点を書き写すのではなく計算するのは、
-    # 導出過程を読み手が検算できるようにするため。
+    # すべて validate_oos.py の出力そのまま（ゴールド, ドル円 の順）。
     tuning = np.array([1.135, 0.537])
     unused = np.array([0.139, 0.290])
-    tuning_t, tuning_n = np.array([3.55, 2.35]), np.array([51, 55])
-    unused_t, unused_n = np.array([0.63, 1.74]), np.array([70, 64])
-    tuning_ci = ci_from_t(tuning, tuning_t, tuning_n)
-    unused_ci = ci_from_t(unused, unused_t, unused_n)
+    tuning_ci = np.array([[0.503, 0.095], [1.783, 0.998]])
+    unused_ci = np.array([[-0.285, -0.026], [0.596, 0.622]])
     x = np.arange(len(instruments))
     width = 0.34
     fig, ax = plt.subplots(figsize=(9.7, 5.5))
@@ -146,7 +134,7 @@ def oos_comparison() -> None:
     ax.legend(frameon=False)
     ax.text(0.18, 0.76, "88%減", transform=ax.transAxes, color="#96362f", fontsize=17, fontweight="bold")
     ax.text(0.69, 0.49, "46%減", transform=ax.transAxes, color="#96362f", fontsize=14, fontweight="bold")
-    fig.text(0.5, -0.01, "エラーバーは平均値とt値から求めた95%信頼区間（t分布）。未使用期間はいずれも0をまたいだ。", ha="center", fontsize=9, color="#526172")
+    fig.text(0.5, -0.01, "エラーバーは95%ブートストラップ信頼区間。未使用期間はいずれも0をまたいだ。", ha="center", fontsize=9, color="#526172")
     fig.tight_layout()
     save(fig, "oos-comparison.png")
 

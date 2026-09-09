@@ -62,7 +62,7 @@
       <section id="out-of-sample">
         <h2>The strongest in-sample result deteriorated the most</h2>
         <p>Parameters selected on 2020–2026 data were held fixed and applied to the previously unused 2013–2019 period, which contained 83 scheduled releases. The gold result fell from +1.135R to +0.139R, an 88% reduction. USDJPY fell from +0.537R to +0.290R, a 46% reduction.</p>
-        <p class="finding">Gold had the highest mean in the tuning period and the largest deterioration in the unused period. Its unused-period t-statistic was 0.63, and its 95% confidence interval derived from the mean and t-statistic of [-0.301, +0.579]R crossed zero.</p>
+        <p class="finding">Gold had the highest mean in the tuning period and the largest deterioration in the unused period. Its unused-period t-statistic was 0.63, and its 95% bootstrap confidence interval of [-0.285, +0.596]R crossed zero.</p>
         <div class="table-wrap">
           <table>
             <caption>Fixed-parameter comparison across the tuning and unused periods</caption>
@@ -75,7 +75,7 @@
         </div>
         <figure class="figure">
           <img src="../assets/oos-comparison.png" width="1631" height="954" alt="Bar chart comparing tuning-period and unused-period mean R with 95 percent confidence intervals for gold and USDJPY; gold declines by 88 percent and USDJPY by 46 percent.">
-          <figcaption>The labels in the chart are Japanese; the orange bars are the tuning period and the blue bars are the unused period. Error bars are 95% confidence intervals derived from the reported means and t-statistics.</figcaption>
+          <figcaption>The labels in the chart are Japanese; the orange bars are the tuning period and the blue bars are the unused period. Error bars are 95% bootstrap confidence intervals.</figcaption>
         </figure>
         <p>The two periods also differed in surprise magnitude. Median absolute payroll surprise was 34–35 thousand in 2013–2019 and 62–64 thousand in 2020–2026. The ratio of initial movement to activation distance ranged from 1.16–1.60 in the earlier period and 1.48–2.25 in the later period.</p>
         <p>A pre-observable regime filter did not resolve the problem. Gold observations in the high-surprise regime averaged +0.655R across the full sample, but −0.040R across 18 unused-period observations. Mixing the tuning observations back into the evaluation made the filter look stronger than its unused-period record.</p>
