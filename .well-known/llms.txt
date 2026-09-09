@@ -4,6 +4,7 @@
 
 - [概要](https://naporit0742.github.io/nfp-event-study/) — 全159回を対象にした調査の結論とデータ境界
 - [アウトオブサンプル検証](https://naporit0742.github.io/nfp-event-study/out-of-sample.html) — 調整期間で最も良く見えたゴールドが未使用期間で88%劣化した記録
+- [追記と修正](https://naporit0742.github.io/nfp-event-study/revision.html) — 当初の過剰適合という解釈を修正した記録。同一データから5通りの結論が出た経緯
 - [検証方法](https://naporit0742.github.io/nfp-event-study/method.html) — イベント検証の過剰適合を避けるための実務手順
 - [確認できた事実](https://naporit0742.github.io/nfp-event-study/facts.html) — 発表直後への値動きの集中と期間差の集計
 - [限界と再現](https://naporit0742.github.io/nfp-event-study/limits.html) — 前提、データ出所、非再配布の理由、図の再生成方法

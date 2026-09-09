@@ -18,6 +18,7 @@
 |---|---|
 | [`index.html`](index.html) | 結論の要旨とFAQ |
 | [`out-of-sample.html`](out-of-sample.html) | 調整期間で最も良く見えた対象が未使用期間で88%劣化した記録 |
+| [`revision.html`](revision.html) | **2026-09-09 追記。** 上記の解釈を修正した記録。検証の向きを変えると結論が反転する |
 | [`method.html`](method.html) | イベント検証で自分を騙さないための手順 |
 | [`facts.html`](facts.html) | 今回のデータから確認できた事実 |
 | [`limits.html`](limits.html) | 限界、前提、データの境界 |

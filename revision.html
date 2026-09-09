@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>追記: 当初の解釈を修正した記録</title>
+  <meta name="description" content="双方向ウォークフォワードとローリング検証の結果、当初の「過剰適合だった」という解釈を修正した記録。同じデータから5通りの結論が出せた。">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://naporit0742.github.io/nfp-event-study/revision.html">
+  <link rel="alternate" hreflang="ja" href="https://naporit0742.github.io/nfp-event-study/revision.html">
+  <link rel="alternate" hreflang="en" href="https://naporit0742.github.io/nfp-event-study/en/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "追記: 当初の解釈を修正した記録",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "author": {"@type": "Person", "name": "NaporiT"},
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://naporit0742.github.io/nfp-event-study/revision.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "概要", "item": "https://naporit0742.github.io/nfp-event-study/"},
+          {"@type": "ListItem", "position": 2, "name": "追記と修正", "item": "https://naporit0742.github.io/nfp-event-study/revision.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="index.html">NFP Evidence Report</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="out-of-sample.html">未使用期間の検証</a>
+        <a href="revision.html" aria-current="page">追記と修正</a>
+        <a href="method.html">方法</a>
+        <a href="facts.html">事実</a>
+        <a href="limits.html">限界</a>
+        <a href="en/index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article>
+      <h1>追記: 当初の解釈を修正した記録</h1>
+      <p class="definition">本稿は、当初「過剰適合の証拠」と解釈した88%の劣化について、検証の向きを変えて調べ直したところ、その解釈が支持されなかった経緯の記録です。同じデータと同じ手続きから、正反対の結論が5通り出せることを確認しました。2026-09-09に追記しました。</p>
+
+      <div class="notice">
+        <p><strong>この追記は、既存ページの記述を訂正するものです。</strong> <a href="out-of-sample.html">未使用期間の検証</a>に書いた「調整期間で最も良く見えた対象が最も大きく劣化した」という観察そのものは変わりません。変わったのは、その原因を過剰適合に帰した解釈のほうです。元の記述は記録として残しています。</p>
+      </div>
+
+      <h2>指摘されたこと</h2>
+      <p>当初の検証は「2020〜2026年で調整し、未使用の2013〜2019年で検証する」という向きでした。これに対して、実運用で手元にあるのは過去だけなのだから、古い期間で決めて新しい期間に当てるほうが自然ではないか、という指摘を受けました。</p>
+      <p>そのとおりです。ただし、ラベルを付け替えるだけでは不正になります。パラメータは2020〜2026年を見て選んでいるため、その期間はすでに使用済みです。そこを検証期間と呼び直せば、何度も見たデータで検証したことになります。そこで選択手続きごと組み直し、両方向を同じグリッドで回しました。</p>
+
+      <h2>両方向を回した結果</h2>
+      <p>グリッドは45通り（発動幅の係数5水準 × 決済時間3水準 × 損切り幅3水準）。両方向で同一のグリッドを使い、調整期間で最も成績が良い条件を選び、もう一方の期間へ当てています。選択基準は通貨単位の1取引あたり平均損益です。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>検証の向きによる結果の違い</caption>
+          <thead><tr><th>向き</th><th>ゴールド</th><th>ドル円</th></tr></thead>
+          <tbody>
+            <tr><td>A: 2013–2019で調整 → 2020–2026で検証</td><td>+2.105 → <strong>+4.568ドル（+117%）</strong></td><td>+8.294 → <strong>+18.681pips（+125%）</strong></td></tr>
+            <tr><td>B: 2020–2026で調整 → 2013–2019で検証</td><td>+5.026 → <strong>−0.893ドル（−118%）</strong></td><td>+20.205 → <strong>+8.163pips（−60%）</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>同じデータ、同じ45通り、同じ選択ルールで、向きを変えただけで結果の符号が入れ替わりました。</p>
+
+      <h2>原因は期間そのものの差だった</h2>
+      <p>45条件すべての中央値を取ると、原因が分かります。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>45条件の中央値（1取引あたり）</caption>
+          <thead><tr><th>対象</th><th>2013–2019</th><th>2020–2026</th><th>倍率</th></tr></thead>
+          <tbody>
+            <tr><td>ゴールド</td><td>+0.505ドル</td><td>+3.381ドル</td><td><strong>6.7倍</strong></td></tr>
+            <tr><td>ドル円</td><td>+4.989pips</td><td>+14.845pips</td><td><strong>3.0倍</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>戦略ファミリー全体が、2020〜2026年のほうが3〜7倍良い結果でした。つまり当初観測した劣化の大部分は、選択による過剰適合ではなく、期間そのものの差で説明できます。良い期間で条件を決めて悪い期間に当てれば下がり、逆にすれば上がる、という関係です。</p>
+
+      <h2>途中で見つけた指標の誤用</h2>
+      <p>条件の順位が期間をまたいで安定しているかを、スピアマン順位相関で調べました。当初は平均Rで測り、rho=0.73〜0.94という高い相関が出ました。しかし平均Rは k と stop_mult の両方について完全に単調でした。</p>
+      <p>R は損益をリスクで割った値で、リスクは <code>stop_mult × k × 値幅</code> です。k や stop_mult を小さくすると分母が小さくなり、それだけで平均Rが上がります。損失側は −1R で頭打ちになるため、効果はさらに強まります。つまり平均Rによる順位づけは、戦略の優劣ではなく分母の大小を並べていました。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>順位相関（調整期間の順位と検証期間の順位、45条件）</caption>
+          <thead><tr><th>対象</th><th>平均R基準</th><th>通貨単位</th></tr></thead>
+          <tbody>
+            <tr><td>ゴールド</td><td>+0.732（p=1e-8）</td><td><strong>+0.251（p=0.097、有意でない）</strong></td></tr>
+            <tr><td>ドル円</td><td>+0.940（p=1e-21）</td><td>+0.556</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>リスク定義そのものを探索対象に含める場合、リスクで割った指標で条件を比較することはできません。</p>
+
+      <h2>分割を1つに頼らない検証</h2>
+      <p>1回の分割から出した結論は分割の選び方に依存するため、拡大窓のローリング検証を行いました。評価年ごとに、その年より前の全データで条件を選び、その年だけで評価します。2016〜2026年の11回です。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>ローリング検証（11年ぶんを束ねた結果）</caption>
+          <thead><tr><th>対象</th><th>件数</th><th>平均</th><th>95%信頼区間</th><th>プラスの年</th></tr></thead>
+          <tbody>
+            <tr><td>ゴールド</td><td>97</td><td>+2.798ドル</td><td>[+1.092, +4.733]</td><td>10/11</td></tr>
+            <tr><td>ドル円</td><td>99</td><td>+12.580pips</td><td>[+5.132, +20.623]</td><td>8/11</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>信頼区間は0をまたぎませんでした。ただし内訳を割ると、この結果は2021年以降に集中しています。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>ローリング検証の前半と後半</caption>
+          <thead><tr><th>対象</th><th>2016–2020</th><th>2021–2026</th></tr></thead>
+          <tbody>
+            <tr><td>ゴールド</td><td>+0.807（95%CI <strong>[−0.02, +1.96]</strong>）</td><td>+5.715（6年中6年プラス）</td></tr>
+            <tr><td>ドル円</td><td>+0.384（95%CI <strong>[−4.25, +5.53]</strong>、5年中2年）</td><td>+21.252（6年中6年プラス）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>2016〜2020年の検証年だけを取ると、どちらも信頼区間が0をまたぎます。外れ値の影響も大きく、ゴールドは2026年（n=5）を1年除くだけで年平均が +3.484 から +1.956 へ下がります。</p>
+
+      <h2>出せてしまった5通りの結論</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>同一データから得られた結論の一覧</caption>
+          <thead><tr><th>検証のやり方</th><th>結論</th></tr></thead>
+          <tbody>
+            <tr><td>単一分割・方向B（当初）</td><td>88%劣化、信頼区間が0をまたぐ → 効果なし</td></tr>
+            <tr><td>単一分割・方向A</td><td>+117%改善 → 有効</td></tr>
+            <tr><td>ローリング11年・全体</td><td>信頼区間が0をまたがない → 有効</td></tr>
+            <tr><td>ローリング・2016–2020のみ</td><td>信頼区間が0をまたぐ → 効果なし</td></tr>
+            <tr><td>ローリング・2021–2026のみ</td><td>2対象あわせて12年中12年プラス → 強く有効</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>いずれも同じイベント群から得られたものです。動いている変数は検証手法ではなく、どの年を評価に含めたかです。</p>
+
+      <h2>この追記から言えること</h2>
+      <ul class="compact-list">
+        <li><strong>1回の分割から出した結論は、分割の選び方の産物である可能性がある。</strong>向きを変えて再現しないなら、結論ではなく観察として扱うのが妥当です。</li>
+        <li><strong>劣化を過剰適合の証拠とする前に、条件全体の中央値が期間でどう動くかを見る。</strong>全体が下がっているなら、選択の問題ではなく期間の問題です。</li>
+        <li><strong>リスク定義を動かす探索で、リスクで割った指標を比較しない。</strong>分母の大小を並べることになります。</li>
+        <li><strong>交差検証の結果は内訳を割る。</strong>全体で有意でも、前半で消えるなら、その有意性は後半の性質を反映しています。</li>
+        <li><strong>今回のデータから言えるのは「期間による」までです。</strong>これより強い主張は、いずれの検証からも得られませんでした。</li>
+      </ul>
+
+      <h2>この追記自体の限界</h2>
+      <p>ここに書いた検証はすべて事後に行ったものです。グリッドの範囲、選択基準、窓の切り方は、データを見たあとに決めています。コストの前提（ゴールド1.5ドル、ドル円6pips）も仮定であり、これを動かすと結果はさらに変わります。5通りの結論のうちどれを見出しにするかを選べる立場にあることも、あわせて記しておきます。</p>
+      <p class="source-note">掲載したのは集計統計だけです。価格はHistData.com、市場予想は個人ブログおよびみんかぶFX、実績値はBLS Employment Situationを元にしましたが、個別値と元ファイルは再配布していません。</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="disclaimer"><strong>免責:</strong> 本サイトは過去データの統計分析と方法論の解説であり、投資助言ではありません。将来の価格、成果、収益性を予測または保証するものではありません。</p>
+      <p class="footer-meta">© 2026 NaporiT · <a href="index.html">概要へ戻る</a></p>
+    </div>
+  </footer>
+</body>
+</html>

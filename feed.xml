@@ -14,6 +14,13 @@
     <summary>2013〜2026年の159回を対象にした調査の結論と公開データの境界。</summary>
   </entry>
   <entry>
+    <title>追記: 当初の解釈を修正した記録</title>
+    <id>https://naporit0742.github.io/nfp-event-study/revision.html</id>
+    <link href="https://naporit0742.github.io/nfp-event-study/revision.html"/>
+    <updated>2026-09-09T21:00:00+09:00</updated>
+    <summary>双方向ウォークフォワードとローリング検証により、当初の過剰適合という解釈を修正した記録。同一データから5通りの結論が出た。</summary>
+  </entry>
+  <entry>
     <title>調整期間で最も良く見えたゴールドが88%劣化した記録</title>
     <id>https://naporit0742.github.io/nfp-event-study/out-of-sample.html</id>
     <link href="https://naporit0742.github.io/nfp-event-study/out-of-sample.html"/>

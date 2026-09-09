@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / "index.html", ROOT / "method.html", ROOT / "out-of-sample.html", ROOT / "facts.html", ROOT / "limits.html", ROOT / "en" / "index.html"]
+PAGES = [ROOT / "index.html", ROOT / "method.html", ROOT / "out-of-sample.html", ROOT / "revision.html", ROOT / "facts.html", ROOT / "limits.html", ROOT / "en" / "index.html"]
 EXPECTED = PAGES + [
     ROOT / "assets" / "site.css", ROOT / "assets" / "minute-ranges.png",
     ROOT / "assets" / "surprise-distribution.png", ROOT / "assets" / "oos-comparison.png",
@@ -84,6 +84,7 @@ def main() -> int:
     canonical_by_page = {
         ROOT / "index.html": "https://naporit0742.github.io/nfp-event-study/",
         ROOT / "out-of-sample.html": "https://naporit0742.github.io/nfp-event-study/out-of-sample.html",
+        ROOT / "revision.html": "https://naporit0742.github.io/nfp-event-study/revision.html",
         ROOT / "method.html": "https://naporit0742.github.io/nfp-event-study/method.html",
         ROOT / "facts.html": "https://naporit0742.github.io/nfp-event-study/facts.html",
         ROOT / "limits.html": "https://naporit0742.github.io/nfp-event-study/limits.html",
@@ -92,6 +93,7 @@ def main() -> int:
     alternate_by_page = {
         ROOT / "index.html": {"ja": canonical_by_page[ROOT / "index.html"], "en": canonical_by_page[ROOT / "en" / "index.html"]},
         ROOT / "out-of-sample.html": {"ja": canonical_by_page[ROOT / "out-of-sample.html"], "en": canonical_by_page[ROOT / "en" / "index.html"] + "#out-of-sample"},
+        ROOT / "revision.html": {"ja": canonical_by_page[ROOT / "revision.html"], "en": canonical_by_page[ROOT / "en" / "index.html"]},
         ROOT / "method.html": {"ja": canonical_by_page[ROOT / "method.html"], "en": canonical_by_page[ROOT / "en" / "index.html"] + "#method"},
         ROOT / "facts.html": {"ja": canonical_by_page[ROOT / "facts.html"], "en": canonical_by_page[ROOT / "en" / "index.html"] + "#facts"},
         ROOT / "limits.html": {"ja": canonical_by_page[ROOT / "limits.html"], "en": canonical_by_page[ROOT / "en" / "index.html"] + "#limits"},
@@ -100,6 +102,7 @@ def main() -> int:
     numeric_evidence = {
         ROOT / "index.html": ("計159回", "+1.135R", "+0.139R", "88%減", "+0.537R", "+0.290R", "46%減"),
         ROOT / "out-of-sample.html": ("2013〜2019年（83回）", "+1.135R", "+0.139R", "88%減", "+0.537R", "+0.290R", "46%減", "−0.040R"),
+        ROOT / "revision.html": ("+4.568ドル", "+18.681pips", "−0.893ドル", "+0.505ドル", "+3.381ドル", "+0.251", "+2.798ドル", "+12.580pips"),
         ROOT / "facts.html": ("34.0 pips", "9.85ドル", "12.1 pips", "4.18ドル", "相関 +0.50", "40回（78%）"),
     }
     for page in PAGES:
